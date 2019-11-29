@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Sample HTML Demonstration Page</title>
+  <style>
+ 
+.wrap {
+  width: 80%;
+  height: 100vh;
+  background: grey;
+  margin: auto;
+}
+
+.head {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: auto;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.container div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.hello_pink {
+  background: pink;
+  height: 150px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  display:flex;
+  margin-top: 10px;
+}
+
+.big_red{
+  background: red;
+  height:100px;
+}
+
+.sky_blue{
+  background: lightblue;
+  margin:0 auto;
+  align-items: center;
+  height: 100px;
+}
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="head" id="start">
+      <h2>Sample Header</h2>
+      <a href = "wowee.com">anchor tag to nowhere</a>
+    </div>
+    <div class="hello_pink">
+      <div class="interior">
+      hello
+    </div>
+    </div>
+    <div class="container">
+      <div class="big_red">
+        <p>click me I'm great</p>
+      </div>
+      <div class="big_red">
+	 <p></p>
+      </div>
+      <div class="sky_blue">
+        <p>
+          World #2
+        </p>
+      </div>
+     </div>
+    </div>
+  </div>
+</body>
+
+</html>
