@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+Andrew Loredo
+
+<head>
+  <title>Test AJAX page</title>
+  <link rel="stylesheet" type="text/css" href="./lab_styles.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="wrapper">
+      <div class="header">Test AJAX page</div>
+      <button class="button" onclick="loadData()">Load Some JSON</button>
+      <div class="content"></div>
+      <div class="footer"></div>
+    </div>
+  </div>
+  <script>
+    function loadData() {
+      fetch('ajax_sample.json')
+        .then(res => res.json())
+        .then(data => data.map(c => c.code)) // only one thing can be returned here, but you can use more than one property in it
+        .then(data => {
+          document.querySelector(".content").innerText = data
+        load = document.createElement('ol');
+        data.innerHTML = '';
+        for(i=0; i<data.length; i++){
+        if(i<15){
+          let j = Math.floor(Math.random() * (data.length ));
+          let con = document.getElementsByClassName("content"); 
+          let list = document.createElement('li'); 
+          let text = document.createTextNode(data[j].code + ' -> ' + data[j].name); 
+          list.appendChild(text); 
+          con.appendChild(list);
+	  load.appendChild(con);
+	}
+       }
+       data.append(load);
+       return data; // you MUST return from a closed fat-arrow
+        });
+    }
+  </script>
+</body>
+
+</html>
