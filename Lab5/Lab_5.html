@@ -12,7 +12,7 @@ Andrew Loredo
   <div class="container">
     <div class="wrapper">
       <div class="header">Test JSON page</div>
-       <button class="button" onclick="load()">Click Me to Replace List Entries</button>
+       <button class="button" onclick="loadData()">Click Me to Replace List Entries</button>
        <div class="spacer"></div>
       <div class="content">
         <ul class="instructions" id="loop">
@@ -274,13 +274,15 @@ Andrew Loredo
       { "name": "Zambia", "code": "ZM" },
       { "name": "Zimbabwe", "code": "ZW" }
     ]
-    console.log("List of countries in the world", countries);
-    function load(){
+    //console.log("List of countries in the world", countries);
+    
+function loadData(){
       sessionStorage.setItem('countries', JSON.stringify(countries));
       let countryNames = JSON.parse(sessionStorage.getItem('countries'));
-      myList = document.createElement('ol');
       let myList = document.getElementById('loop');
+      //myList = document.createElement('ol');
       loop.innerHTML = ''; 
+      document.getElementById("loop").style.listStyleType = "decimal"; 
       for(i=0; i<countryNames.length; i++){
         if(i<50){
           let j = Math.floor(Math.random() * (countryNames.length ));
@@ -292,6 +294,7 @@ Andrew Loredo
         }
       } 
     }
+
   </script>
 </body>
 
